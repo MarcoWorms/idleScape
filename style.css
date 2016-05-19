@@ -6,6 +6,10 @@
 
 body {
   background-color: #242424;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .div960 {
@@ -23,13 +27,11 @@ body {
   width: 960px;
   background-color: #1B1B1B;
   overflow: hidden;
-  
+  position: relative;
   box-shadow: 0px 0px 20px rgba(0,0,0,1);
 }
 
 .footer {
-    margin: auto;
-    text-align: right;
     color: rgba(255, 255, 255, 0.32);
     font-size: 14px;
     text-decoration: none;
@@ -43,4 +45,14 @@ body {
 /* visited link */
 .footer a:visited {
     color: #BDBDBD;
+}
+
+.left {
+  float: left;
+  text-align: left;
+}
+
+.right {
+  float: right;
+  text-align: right;
 }
