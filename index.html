@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IdleScape</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+    <div id="root_vue" class="div960">
+    <!-- 960 width cetralized div -->
+
+        <h1 class="logo">
+            idleScape
+        </h1>
+
+        <div class="game-content">
+            <cityselector></cityselector>
+            
+            <inventory></inventory>
+            
+            <cityexplorer></cityexplorer>
+            
+        </div>
+
+        <br>
+        <p class="footer">
+            <a href="http://www.runescape.com/">Runescape</a> is a game made by <a href="http://www.jagex.com/">Jagex Game Studio</a><br>idleScape is a non-official idle game based on <a href="http://oldschool.runescape.com/">Old School Runescape</a><br>The <a href="http://hyperhippo.ca/games/runescape/">Official Runescape Idle Adventures game</a> is being developed by <a href="http://hyperhippo.ca/">Hyper Hippo</a><br>Contact: eu@sou.ninja
+        </p>
+        <br>
+        <br>
+
+    </div>
+
+    <script src="dependencies/vue.js"></script>
+
+    <script src="auxiliar.js"></script>
+
+    <!-- Model -->
+    <script src="model/xp_table.js"></script>
+    <script src="model/itens.js"></script>
+    <script src="model/monsters.js"></script>
+    <script src="model/quests.js"></script>
+    <script src="model/combat_spots.js"></script>
+    <script src="model/skilling_spots.js"></script>
+    <script src="model/cities.js"></script>
+    <!-- / Model -->
+
+    <!-- Vue components -->
+    <link rel="stylesheet" href="vue_components/city_selector.css">
+    <script src="vue_components/city_selector.js"></script>
+    <link rel="stylesheet" href="vue_components/inventory.css">
+    <script src="vue_components/inventory.js"></script>
+    <link rel="stylesheet" href="vue_components/city_explorer.css">
+    <script src="vue_components/city_explorer.js"></script>
+
+    <!-- / Vue components -->
+    <script src="root_vue.js"></script>
+    
+    
+</body>
+</html>
