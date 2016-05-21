@@ -19,8 +19,8 @@ idlescape.models.spots.skilling = {
     ],
     locations: {
       lumbridge: {
-        x: 420,
-        y: 200,
+        x: 430,
+        y: 204,
         distance_to_bank: 1
       }
     }
