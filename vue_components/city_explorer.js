@@ -24,7 +24,7 @@ const pin_template = `
         {{ get_pin_name(quest_spot, 'quests') }}
     </div> 
 
-    <mainpopup></mainpopup>
+    <mainpopup :location="selected_city"></mainpopup>
 
   </div> 
 `

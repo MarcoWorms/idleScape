@@ -36,4 +36,26 @@
 
 .popup_title {
   color: white;
+  margin-top: 30px;
+  margin-left: 92px;
 }
+
+#main_popup #image_container {
+  float: left;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 100px;
+}
+
+.popup_content_container {
+  background-color: rgba(49, 49, 49, 0.92);
+  margin: auto;
+  margin-top: 39px;
+  width: 90%;
+  height: 292px;
+  padding: 10px;
+  border-radius: 7px;
+  border: solid 2px black;
+  position: relative;
+}
+

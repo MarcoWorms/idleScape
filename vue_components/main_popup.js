@@ -4,8 +4,16 @@ idlescape.vues.main_popup = Vue.extend({
     <div @click="hide" class="close_button_container">
       <p class="close_button">X</p>
     </div>
-    <img :src="get_spot_img()"></img>
+
+    <div id="image_container">
+      <img :src="get_spot_img()"></img>
+    </div>
+    
     <h1 class="popup_title">{{ spot.name }}</h1>
+
+    <div class="popup_content_container">
+      <skilling-spot-mechanic></skilling-spot-mechanic>
+    </div>
   </div>
 `,
   data: function() {
@@ -15,6 +23,7 @@ idlescape.vues.main_popup = Vue.extend({
       spot: {}
     }
   },
+  props: ['location'],
   methods: {
     hide: function () {
       this.visible = false
