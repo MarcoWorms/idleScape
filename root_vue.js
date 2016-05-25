@@ -6,6 +6,7 @@ Vue.component('bank', idlescape.vues.bank)
 Vue.component('mainpopup', idlescape.vues.main_popup)
 Vue.component('skilling-spot-mechanic', idlescape.vues.skilling_spot_mechanic)
 Vue.component('bank-skill', idlescape.vues.bank_skill)
+Vue.component('skills', idlescape.vues.skills)
 
 idlescape.root_vue = new Vue({
   el: '#root_vue',

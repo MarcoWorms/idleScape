@@ -1,41 +1,51 @@
-idlescape.vues.inventory = Vue.extend({
+idlescape.vues.skills = Vue.extend({
   template: `
-    <p class="inv-title">Bank:</p>
-    <div class="inventory">
-      
-      <p v-for="item in all_inventory" v-if="item.ammount > 0">
-        {{ item.object.name }} : {{ item.ammount }}
-      </p>
+    <div class="skill-container" v-for="skill in player_skills">
+
+        <div class="skill-info-container">
+            <div class="skill-image-container">
+                <img class="skill-image" :src="get_skill_image($key)" alt="" />
+            </div>
+            
+            <span class="skill-name">{{skill.name}}</span><br>
+        </div>
+        
+        <span class="skill-level">Lvl: {{skill.current_lvl}}</span><br>
+        
+
+        <div class="skill-progress-bar">
+            <div class="skill-progress-bar-content" :style="get_width_percentage(skill.exp_current, skill.exp_to_next_lvl, skill.current_lvl)">
+            </div>
+            <span class="skill-progress-bar-text">{{skill.exp_current}} / {{skill.exp_to_next_lvl}}</span>
+        </div>
+        
+        <br>
     </div>
   `,
   data: function () {
     return {
-      all_inventory: {},
+      player_skills: idlescape.player.all_skills()
     }
   },
   methods: {
-    add: function (item_uid, ammount) {
-      if (ammount === undefined) { ammount = 1 }
-      if (this.all_inventory[item_uid]) {
-        this.$set ('all_inventory.'+item_uid+'.ammount', this.all_inventory[item_uid].ammount + ammount) 
-      } else {
-        this.$set ('all_inventory.'+item_uid, {
-          object: idlescape.all_items[item_uid],
-          ammount: ammount
-        }) 
-      } 
+    get_width_percentage: function (exp_current, exp_to_next_lvl, current_lvl) {
+      let width_percentage = 0
+      let start_exp_this_lvl = idlescape.models.xp_table[current_lvl]
+      let total_exp_this_lvl = exp_to_next_lvl - start_exp_this_lvl
+      let relative_exp = exp_current - start_exp_this_lvl
+
+      width_percentage = Math.ceil(relative_exp * 100 / total_exp_this_lvl)
+
+      return {
+        width: width_percentage + '%'
+      }
     },
-    remove: function (item_uid, ammount)  {
-      if (ammount === undefined) { ammount = 1 }
-      this.$set ('all_inventory.'+item_uid+'.ammount', this.all_inventory[item_uid].ammount - ammount) 
-    },
-    have: function (item_uid, ammount) {
-      if (!this.all_inventory[item_uid]) { return false }
-      if (ammount === undefined) { ammount = 1 }
-      return this.all_inventory[item_uid].ammount >= ammount ? true : false
-    },
-    get_all: function () {
-      return this.all_inventory
+    get_skill_image: function (skill_uid) {
+        return './imgs/small_icons/' + skill_uid + '.png'
     }
   }
+
 })
+
+
+

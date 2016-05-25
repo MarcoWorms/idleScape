@@ -92,20 +92,20 @@ idlescape.player = (function () {
           if (bank[item_uid]) {
             bank[item_uid].ammount += ammount_to_add
           } else {
-            bank[item_uid] = {
+            Vue.set(bank, item_uid, {
               object: idlescape.models.all_items[item_uid],
               ammount: ammount_to_add
-            }
+            })
           } 
         },
-        remove: function (item_uid, ammount_to_add)  {
-          if (ammount_to_add === undefined) { ammount_to_add = 1 }
-          bank[item_uid].ammount -= ammount_to_add
+        remove: function (item_uid, ammount_to_remove)  {
+          if (ammount_to_remove === undefined) { ammount_to_remove = 1 }
+          bank[item_uid].ammount -= ammount_to_remove
         },
-        have: function (item_uid, ammount_to_add) {
+        have: function (item_uid, quantity) {
           if (!bank[item_uid]) { return false }
-          if (ammount_to_add === undefined) { ammount_to_add = 1 }
-          return bank[item_uid].ammount >= ammount_to_add ? true : false
+          if (quantity === undefined) { quantity = 1 }
+          return bank[item_uid].ammount >= quantity ? true : false
         },
         get_all: function () {
           return bank

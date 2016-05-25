@@ -2,7 +2,7 @@ idlescape.vues.city_selector = Vue.extend({
   template: `
     <div class="cities" :style="container_size">
       <a v-for="city in all_cities" @click="select($key)" class="city" :class="{ 'selected-city': is_city_selected($key)}"">
-        <span>{{ city.name }}</span>
+        <span style="cursor:pointer;">{{ city.name }}</span>
       </a>
     </div>
   `,

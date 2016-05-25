@@ -21,32 +21,15 @@ idlescape.vues.bank_skill = Vue.extend({
 
 
 
-            <div v-if="is_selected('skill')">
-
-                <div class="skill-container" v-for="skill in player_skills">
-                    <img :src="get_skill_image($key)" alt="" /><span class="skill-name">{{skill.name}}</span><br>
-                    <span class="skill-level">Lvl: {{skill.current_lvl}}</span><br>
-                    
-
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-bar-content" :style="get_width_percentage(skill.exp_current, skill.exp_to_next_lvl, skill.current_lvl)">
-                        </div>
-                        <span class="skill-progress-bar-text">{{skill.exp_current}} / {{skill.exp_to_next_lvl}}</span>
-                    </div>
-                    
-                    <br>
-                </div>
-
-
+            <skills v-if="is_selected('skill')">
                 
-            </div> 
+            </skills> 
 
         </div>
     `,
     data: function () {
         return {
-            selected: 'skill',
-            player_skills: idlescape.player.all_skills()
+            selected: 'skill'
         }
     },
     methods: {
@@ -70,22 +53,6 @@ idlescape.vues.bank_skill = Vue.extend({
         },
         set_selected: function (tab_uid) {
             this.selected = tab_uid
-        },
-        get_width_percentage: function (exp_current, exp_to_next_lvl, current_lvl) {
-            let width_percentage = 0
-            let start_exp_this_lvl = idlescape.models.xp_table[current_lvl]
-            let total_exp_this_lvl = exp_to_next_lvl - start_exp_this_lvl
-            let relative_exp = exp_current - start_exp_this_lvl
-
-            width_percentage = Math.ceil(relative_exp * 100 / total_exp_this_lvl)
-
-
-            return {
-                width: width_percentage + '%'
-            }
-        },
-        get_skill_image: function (skill_uid) {
-            return './imgs/small_icons/' + skill_uid + '.png'
         }
     }
 })
