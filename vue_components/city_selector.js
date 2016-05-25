@@ -10,7 +10,7 @@ idlescape.vues.city_selector = Vue.extend({
     return {
       selected_city: 'lumbridge',
       container_size: {
-        width: '137px'
+        width: '131px'
       }
     }
   },
