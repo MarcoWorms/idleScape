@@ -22,6 +22,9 @@ idlescape.models.all_items = {
   logs: {
     name: 'Logs'
   },
+  oak_logs: {
+    name: 'Oak logs'
+  },
   copper: {
     name: 'Copper'
   },
@@ -31,6 +34,9 @@ idlescape.models.all_items = {
   bronze_bar: {
     name: 'Bronze bar'
   },
+  ashes: {
+    name: 'Ashes'
+  }
   
 }
 // generate runes

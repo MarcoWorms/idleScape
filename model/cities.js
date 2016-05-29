@@ -8,11 +8,13 @@ idlescape.models.all_cities = {
     },
     spots_uids: {
       skilling: [
-        'fly_fishing',
-        'bait_fishing',
-        'cook_o_matic_100',
-        'forge',
-        'trees'
+        // 'fly_fishing',
+        // 'bait_fishing',
+        // 'cook_o_matic_100',
+        // 'forge',
+        'trees',
+        'oaks',
+        'fm_logs'
       ],
       combat: [
         'farm',
