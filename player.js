@@ -118,7 +118,6 @@ idlescape.player = (function () {
   const check_lvl = (skill_uid) => {
     let current_skill_exp = all_skills[skill_uid].exp_current
 
-    console.log(all_skills[skill_uid])
     if (current_skill_exp >= all_skills[skill_uid].exp_to_next_lvl) {
       all_skills[skill_uid].current_lvl += 1
       all_skills[skill_uid].exp_to_next_lvl = idlescape.models.xp_table[all_skills[skill_uid].current_lvl + 1]
@@ -143,7 +142,7 @@ idlescape.player = (function () {
       }
     },
     skill_damage_per_tick: function (skill_uid) {
-      return 0.2 + all_skills[skill_uid].current_lvl / 10
+      return 0.5 + all_skills[skill_uid].current_lvl / 20
     }
   }
 

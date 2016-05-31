@@ -148,9 +148,9 @@ idlescape.vues.skilling_spot_mechanic = Vue.extend({
             var max_dmg = this.spot.hp / this.spot.min_ticks_to_farm
             this.total_ticks += 1
             var damage = idlescape.player.skill_damage_per_tick(Object.keys(this.spot.required_levels)[0])
-            damage = damage + ((Math.random() * damage) - damage/2)
+            damage = damage + (((Math.random() * damage) - damage)/4)
             if (damage >= max_dmg) { damage = max_dmg }
-            console.log(damage)
+            // console.log(damage)
             this.hp += damage
             this.detect_death()
           } else {

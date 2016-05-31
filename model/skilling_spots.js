@@ -115,7 +115,7 @@ idlescape.models.spots.skilling = {
     required_levels: {
       woodcutting:1
     },
-    hp: 4,
+    hp: 3,
     min_ticks_to_farm: 4,
     locations: {
       lumbridge: {
@@ -138,7 +138,7 @@ idlescape.models.spots.skilling = {
     required_levels: {
       woodcutting:15
     },
-    hp: 15,
+    hp: 5,
     min_ticks_to_farm: 3,
     locations: {
       lumbridge: {
@@ -156,6 +156,52 @@ idlescape.models.spots.skilling = {
       }
     ]
   },
+  willows: {
+    name: 'Willows',
+    required_levels: {
+      woodcutting: 30
+    },
+    hp: 8,
+    min_ticks_to_farm: 2,
+    locations: {
+      draynor: {
+        x: 172,
+        y: 319
+      }
+    },
+    drops: [
+      {
+        uid: 'willow_logs',
+        exp: {
+          skill_uid: 'woodcutting',
+          ammount: 68
+        }
+      }
+    ]
+  },
+  yews: {
+    name: 'Willows',
+    required_levels: {
+      woodcutting: 60
+    },
+    hp: 20,
+    min_ticks_to_farm: 4,
+    locations: {
+      edgeville: {
+        x: 217,
+        y: 129
+      }
+    },
+    drops: [
+      {
+        uid: 'yew_logs',
+        exp: {
+          skill_uid: 'woodcutting',
+          ammount: 175
+        }
+      }
+    ]
+  },
 
 // firemaking
   fm_logs: {
@@ -169,7 +215,7 @@ idlescape.models.spots.skilling = {
         ammount: 1
       }
     ],
-    hp: 6,
+    hp: 3,
     min_ticks_to_farm: 2,
     locations: {
       lumbridge: {

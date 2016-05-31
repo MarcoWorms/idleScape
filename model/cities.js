@@ -30,6 +30,17 @@ idlescape.models.all_cities = {
     name: 'Draynor Village',
     css: {
         backgroundPosition: '-449px -530px'
+    },
+    spots_uids: {
+      skilling: [
+        'willows'
+      ],
+      combat: [
+        
+      ],
+      quests: [
+        
+      ]
     }
   },
   falador: {
@@ -42,6 +53,17 @@ idlescape.models.all_cities = {
     name: 'Edgeville',
     css: {
       backgroundPosition: '-399px -6px'
+    },
+    spots_uids: {
+      skilling: [
+        'yews'
+      ],
+      combat: [
+        
+      ],
+      quests: [
+        
+      ]
     }
   },
   varrock: {

@@ -35,7 +35,7 @@
     -webkit-transition: background-color .15s, opacity .5s ease-in;
     -o-transition: background-color .15s, opacity .5s ease-in;
 }
-.spot_can_see {
+.is_visible {
     opacity: 100
 }
 
@@ -53,6 +53,14 @@
 
 .skilling:hover {
     background-color: rgba(255, 235, 0, 0.9);
+}
+
+.spot_doesnt_meet_lvl_requirement {
+    background-color: rgba(255, 235, 0, 0.1);
+}
+
+.spot_doesnt_meet_lvl_requirement:hover {
+    background-color: rgba(255, 235, 0, 0.2);
 }
 
 .quests {

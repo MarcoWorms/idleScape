@@ -25,6 +25,12 @@ idlescape.models.all_items = {
   oak_logs: {
     name: 'Oak logs'
   },
+  willow_logs: {
+    name: 'Willow logs'
+  },
+  yew_logs: {
+    name: 'Yew logs'
+  },
   copper: {
     name: 'Copper'
   },
